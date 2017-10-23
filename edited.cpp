@@ -166,25 +166,14 @@ int findAndReplace (string wordOne, string wordTwo){
     matchin >> noskipws;
     while (matchin.eof() == false){
         matchin >> word;
-        replace << word;
-        /*
-        matchin.get(letter);
-        if(letter != ' ' || letter != '\n'){
-            word = word + letter;
+        if (searchtwo(wordOne, word) == 'f' && word[word.length] != '.'){
+            replace << word << " ";
         }
-        else{
-            replace << letter;
-        }
-        if (searchtwo(wordOne, word) == 'f'){
-            replace << word;
+        else if (searchtwo(wordOne, word) == 'f' && word[word.length] == '.'){
+            replace << word << endl;
         }
         else if (searchtwo(wordOne, word) == 't'){
-            replace << wordTwo;
+            replace << wordTwo << " ";
         }
         else if (searchtwo(wordOne, word) == 'p'){
-            replace << wordTwo << ".";
-        }
-    }
-    */}
-}
-    
+            replace << wordTwo << "." << endl;
